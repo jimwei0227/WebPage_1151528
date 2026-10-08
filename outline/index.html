@@ -1,476 +1,1767 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <title>飛機餅乾 | 承載童心與純粹手作的酥脆幸福</title>
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
+      --primary-blue: #1d4ed8;
+      --primary-dark: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent-sky: #0284c7;
+      --sky-bg: #f0f9ff;
+      --warm-cream: #fffdfa;
+      --cookie-golden: #d97706;
+      --cookie-light: #fef3c7;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(30, 58, 138, 0.06);
+      --shadow-md: 0 8px 24px rgba(30, 58, 138, 0.1);
+      --shadow-lg: 0 16px 36px rgba(30, 58, 138, 0.15);
+      --radius: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
       margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-    .serif { font-family: "Noto Serif TC", serif; }
-    .eyebrow {
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--warm-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 12px rgba(30, 58, 138, 0.05);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.4rem;
+      box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+      transform: rotate(-10deg);
+      transition: var(--transition);
+    }
+
+    .brand-logo:hover .logo-icon {
+      transform: rotate(0deg) scale(1.05);
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      letter-spacing: 1px;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      color: var(--accent-sky);
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-blue);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cart-btn {
+      position: relative;
+      background: var(--sky-bg);
+      border: 1px solid #bfdbfe;
+      color: var(--primary-dark);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .cart-btn:hover {
+      background: var(--primary-blue);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: #ef4444;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: bold;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
+    }
+
+    .btn-cta {
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+      color: white;
+      padding: 0.65rem 1.4rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(29, 78, 216, 0.35);
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 5rem 2rem 6rem;
+      background: radial-gradient(circle at 10% 20%, #e0f2fe 0%, #f0f9ff 40%, #ffffff 80%);
+      overflow: hidden;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .hero-content {
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.4rem 1.1rem;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      border: 1px solid #bfdbfe;
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--primary-blue), #0284c7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.2rem;
+      line-height: 1.8;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--primary-dark);
+      border: 1.5px solid #cbd5e1;
+      padding: 0.65rem 1.4rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+      background: var(--sky-bg);
+      transform: translateY(-2px);
+    }
+
+    .hero-badges {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(203, 213, 225, 0.6);
+    }
+
+    .hero-badge-item {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin: 0 0 13px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
     }
-    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
-    .section-title {
-      margin: 0;
-      font: 700 clamp(30px, 4vw, 46px)/1.28 "Noto Serif TC", serif;
-      letter-spacing: .035em;
-    }
-    .section-title em { color: var(--blue); font-style: normal; }
-    .section-copy { max-width: 48ch; margin: 20px 0 0; color: var(--muted); }
-    .button {
-      display: inline-flex;
+
+    .badge-icon {
+      width: 40px;
+      height: 40px;
+      background: #eff6ff;
+      border-radius: 10px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 11px;
-      min-height: 50px;
-      padding: 12px 23px;
-      border: 1px solid transparent;
-      border-radius: 2px;
-      font-size: 14px;
+      color: var(--primary-blue);
+      font-size: 1.1rem;
+    }
+
+    .badge-info h4 {
+      font-size: 1rem;
+      color: var(--primary-dark);
       font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
     }
-    .button:hover { transform: translateY(-2px); }
-    .button:focus-visible, a:focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
-    .button-primary { color: var(--navy); background: var(--sand); box-shadow: 0 9px 22px rgba(1, 35, 59, .2); }
-    .button-primary:hover { background: #f0c77f; }
-    .button-outline { color: #fff; border-color: rgba(255,255,255,.58); }
-    .button-outline:hover { background: rgba(255,255,255,.1); }
-    .arrow { font-size: 18px; line-height: 1; }
 
-    /* Header */
-    .site-header {
-      position: absolute;
-      z-index: 10;
+    .badge-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Hero Visual Card */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cookie-showcase {
+      position: relative;
       width: 100%;
-      color: #fff;
-      border-bottom: 1px solid rgba(255, 255, 255, .16);
+      max-width: 460px;
+      aspect-ratio: 1;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #ffffff, #dbeafe);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+      text-align: center;
+      border: 4px solid var(--white);
     }
-    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 78px; }
-    .brand { display: flex; align-items: center; gap: 12px; font: 700 20px/1 "Noto Serif TC", serif; letter-spacing: .11em; }
-    .brand-mark {
+
+    .plane-art {
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(135deg, #fbbf24, #d97706);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 28px rgba(217, 119, 6, 0.35);
+      position: relative;
+      margin-bottom: 1.5rem;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(3deg); }
+    }
+
+    .plane-art i {
+      font-size: 5rem;
+      color: var(--white);
+      transform: rotate(-15deg);
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    }
+
+    .float-card {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 0.8rem 1.2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid #e2e8f0;
+      animation: float2 5s ease-in-out infinite;
+    }
+
+    .float-card-1 {
+      top: 10%;
+      left: -15px;
+    }
+
+    .float-card-2 {
+      bottom: 12%;
+      right: -20px;
+      animation-delay: 2.5s;
+    }
+
+    @keyframes float2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .float-card .icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--sky-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-blue);
+      font-size: 1rem;
+    }
+
+    .float-card-text {
+      text-align: left;
+    }
+
+    .float-card-text .title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .float-card-text .sub {
+      font-size: 0.75rem;
+      color: var(--cookie-golden);
+      font-weight: 600;
+    }
+
+    /* Section Global Styles */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--accent-sky);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Features Section */
+    .features-grid {
+      max-width: 1200px;
+      margin: 0 auto;
       display: grid;
-      width: 29px;
-      height: 29px;
-      place-items: center;
-      border: 1px solid var(--sky);
-      border-radius: 50%;
-      color: var(--sky);
-      font: 700 19px/1 "Playfair Display", serif;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
-    .brand small { display: block; margin-top: 5px; color: rgba(255,255,255,.64); font: 600 8px/1 sans-serif; letter-spacing: .21em; }
-    .nav-links { display: flex; align-items: center; gap: 29px; font-size: 13px; font-weight: 500; }
-    .nav-links a { position: relative; padding: 6px 0; }
-    .nav-links a:not(.nav-cta)::after { content: ""; position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--sky); transform: scaleX(0); transform-origin: right; transition: transform .22s; }
-    .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); transform-origin: left; }
-    .nav-cta { padding: 8px 16px !important; border: 1px solid rgba(255,255,255,.55); }
-    .nav-cta:hover { color: var(--navy); background: #fff; }
-    .menu-toggle { display: none; border: 0; color: #fff; background: transparent; }
 
-    /* Hero */
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: .36;
-      background: radial-gradient(circle at 76% 45%, rgba(55, 167, 212, .75), transparent 23%), linear-gradient(117deg, rgba(4,25,45,.22) 0 48%, rgba(5,47,78,.82) 78%);
+    .feature-card {
+      background: var(--white);
+      padding: 2.2rem 1.8rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      text-align: center;
+      position: relative;
     }
-    .hero::after {
-      content: "";
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: #bfdbfe;
+    }
+
+    .feature-icon-wrapper {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .feature-card:hover .feature-icon-wrapper {
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+      color: var(--white);
+      transform: scale(1.08);
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Products Section */
+    .products {
+      background: #f8fafc;
+    }
+
+    .products-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.2rem;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: #93c5fd;
+    }
+
+    .product-image-container {
+      position: relative;
+      height: 220px;
+      background: linear-gradient(135deg, #e0f2fe, #f0fdf4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-shape-icon {
+      font-size: 5rem;
+      color: var(--cookie-golden);
+      opacity: 0.85;
+      transition: var(--transition);
+      filter: drop-shadow(0 8px 16px rgba(217, 119, 6, 0.2));
+    }
+
+    .product-card:hover .product-shape-icon {
+      transform: scale(1.12) rotate(-5deg);
+    }
+
+    .product-badge {
       position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--primary-blue);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .product-badge.gold {
+      background: var(--cookie-golden);
+    }
+
+    .product-badge.teal {
+      background: #0d9488;
+    }
+
+    .product-info {
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-tags {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 0.6rem;
+    }
+
+    .product-tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      background: #f1f5f9;
+      color: #475569;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.2rem;
+    }
+
+    .product-price {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .original-price {
+      font-size: 0.85rem;
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
+
+    .current-price {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .current-price span {
+      font-size: 0.9rem;
+    }
+
+    .btn-add-cart {
+      background: var(--primary-blue);
+      color: white;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .btn-add-cart:hover {
+      background: var(--primary-dark);
+      transform: scale(1.08);
+    }
+
+    /* Story Section */
+    .story-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .story-image-box {
+      background: linear-gradient(135deg, #bfdbfe, #60a5fa);
+      border-radius: 30px;
+      padding: 2.5rem;
+      text-align: center;
+      color: white;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .story-image-box h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .story-image-box p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .story-points {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .story-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 1.2rem;
+    }
+
+    .story-points i {
+      color: var(--primary-blue);
+      font-size: 1.2rem;
+      margin-top: 4px;
+    }
+
+    /* Special Promo Banner */
+    .promo-banner {
+      background: linear-gradient(135deg, var(--primary-dark), #1d4ed8);
+      color: white;
+      border-radius: 24px;
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding: 3.5rem 3rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promo-banner::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+
+    .promo-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .promo-desc {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+
+    .promo-btn {
+      background: #fbbf24;
+      color: #78350f;
+      font-weight: 800;
+      padding: 1rem 2.5rem;
+      border-radius: 35px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .promo-btn:hover {
+      background: #f59e0b;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background: var(--sky-bg);
+    }
+
+    .testimonials-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .customer-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .customer-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+    }
+
+    .customer-role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 4.5rem 2rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .footer-brand h3 {
+      color: var(--white);
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-brand p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      width: 38px;
+      height: 38px;
+      background: #1e293b;
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--primary-blue);
+      transform: translateY(-2px);
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    /* Cart Drawer Modal */
+    .cart-drawer-overlay {
+      position: fixed;
       top: 0;
-      right: -180px;
-      width: 760px;
-      height: 760px;
-      border: 1px solid rgba(153,220,240,.22);
-      border-radius: 50%;
-      box-shadow: 0 0 0 62px rgba(153,220,240,.045), 0 0 0 180px rgba(153,220,240,.025);
-    }
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; min-height: 704px; padding: 122px 0 72px; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero-title { max-width: 13ch; margin: 0; font: 900 clamp(42px, 5.5vw, 68px)/1.22 "Noto Serif TC", serif; letter-spacing: .075em; }
-    .hero-title .blue { color: var(--sky); }
-    .hero-lede { max-width: 42ch; margin: 26px 0 32px; color: rgba(255,255,255,.78); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
-    .hero-note { margin-top: 28px; color: rgba(255,255,255,.52); font-size: 11px; letter-spacing: .1em; }
-    .hero-art { position: relative; min-height: 453px; }
-    .sun { position: absolute; top: 2%; right: 14%; width: 166px; height: 166px; border-radius: 50%; background: #93d6e6; box-shadow: 0 0 65px rgba(145,215,233,.36); }
-    .mountain { position: absolute; right: -4%; bottom: 2%; width: 98%; height: 70%; clip-path: polygon(0 73%, 23% 42%, 37% 59%, 61% 10%, 73% 29%, 84% 0, 100% 37%, 100% 100%, 0 100%); background: linear-gradient(135deg, #0b7eac, #06446f 70%); opacity: .85; }
-    .mountain::after { content: ""; position: absolute; inset: 0; background: linear-gradient(155deg, transparent 38%, rgba(2,35,58,.72) 38.5% 100%); }
-    .coffee-vessel { position: absolute; z-index: 2; right: 17%; bottom: 0; width: 255px; filter: drop-shadow(0 22px 21px rgba(0,0,0,.23)); }
-    .dripper { position: relative; width: 205px; height: 132px; margin: 0 auto -5px; border: 4px solid #e9f8fa; border-top-width: 6px; border-radius: 10px 10px 44% 44%; background: linear-gradient(115deg, rgba(123,206,225,.5), rgba(26,118,161,.23)); clip-path: polygon(0 0,100% 0,78% 100%,22% 100%); }
-    .dripper::after { content: ""; position: absolute; inset: 18px 16px 0; border-top: 1px solid rgba(255,255,255,.6); border-left: 1px solid rgba(255,255,255,.25); transform: skewX(-17deg); }
-    .carafe { position: relative; width: 170px; height: 181px; margin: 0 auto; border: 4px solid #e9f8fa; border-radius: 9px 9px 39% 39% / 9px 9px 19% 19%; background: linear-gradient(90deg, rgba(110,211,229,.26), rgba(1,52,87,.52)); }
-    .carafe::before { content: ""; position: absolute; top: -16px; left: 27px; width: 108px; height: 20px; border: 4px solid #e9f8fa; border-bottom: 0; border-radius: 50% 50% 0 0; }
-    .carafe::after { content: ""; position: absolute; right: 16px; bottom: 24px; left: 16px; height: 60px; border-radius: 3px 3px 26px 26px; background: linear-gradient(90deg, rgba(133,67,26,.84), rgba(76,33,9,.92)); }
-    .art-label { position: absolute; z-index: 3; top: 50%; right: 2%; width: 114px; padding-left: 12px; border-left: 1px solid var(--sky); color: rgba(255,255,255,.78); font-size: 10px; line-height: 1.7; letter-spacing: .1em; }
-    .art-label strong { display: block; color: var(--sky); font: 600 20px/1 "Playfair Display", serif; }
-    .scroll-line { position: absolute; bottom: 23px; left: max(24px, calc((100% - 1120px) / 2)); z-index: 2; display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.56); font-size: 10px; letter-spacing: .15em; }
-    .scroll-line::before { content: ""; width: 38px; height: 1px; background: currentColor; }
-
-    /* Intro */
-    .intro { padding: 118px 0; background: #fff; }
-    .intro-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .intro-stamp { position: relative; min-height: 355px; }
-    .stamp-circle { position: absolute; inset: 13px auto auto 0; display: grid; width: 290px; height: 290px; place-items: center; border: 1px solid #9dd7e7; border-radius: 50%; color: var(--blue); text-align: center; }
-    .stamp-circle::before { content: ""; position: absolute; inset: 14px; border: 1px dashed #a5d9e6; border-radius: 50%; }
-    .stamp-circle strong { display: block; font: 700 43px/1 "Playfair Display", serif; letter-spacing: -.04em; }
-    .stamp-circle span { display: block; margin-top: 8px; font-size: 11px; font-weight: 700; letter-spacing: .14em; }
-    .stamp-card { position: absolute; right: 0; bottom: 0; width: 216px; padding: 21px 23px; color: #fff; background: var(--blue); box-shadow: var(--shadow); }
-    .stamp-card p { margin: 0; font-size: 12px; line-height: 1.8; }
-    .stamp-card b { display: block; margin-bottom: 8px; color: var(--sky); font: 600 12px/1 "Playfair Display", serif; letter-spacing: .14em; }
-    .intro .section-copy { font-size: 16px; }
-    .intro-link { display: inline-flex; gap: 10px; margin-top: 28px; padding-bottom: 4px; border-bottom: 1px solid var(--blue); color: var(--blue); font-size: 14px; font-weight: 700; }
-
-    /* Coffees */
-    .coffee-section { padding: 110px 0 120px; background: var(--mist); }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 43px; }
-    .section-head .section-copy { max-width: 35ch; margin: 0; font-size: 14px; }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card { position: relative; min-height: 384px; overflow: hidden; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .coffee-card::before { content: ""; position: absolute; right: -63px; bottom: -87px; width: 238px; height: 238px; border: 1px solid rgba(255,255,255,.29); border-radius: 50%; }
-    .coffee-card::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: linear-gradient(160deg, transparent 42%, rgba(0,0,0,.28)); pointer-events: none; }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-content { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 384px; padding: 29px; }
-    .coffee-number { color: var(--sky); font: 600 13px/1 "Playfair Display", serif; letter-spacing: .08em; }
-    .coffee-origin { margin: auto 0 7px; color: rgba(255,255,255,.63); font-size: 11px; font-weight: 600; letter-spacing: .14em; }
-    .coffee-card h3 { margin: 0; font: 700 27px/1.35 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .coffee-notes { margin: 11px 0 22px; color: rgba(255,255,255,.75); font-size: 13px; }
-    .coffee-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.25); }
-    .price { font-size: 14px; font-weight: 700; }
-    .add-button { padding: 5px 0; border: 0; color: #fff; background: none; font-size: 12px; font-weight: 700; letter-spacing: .07em; }
-    .add-button:hover { color: var(--sand); }
-
-    /* Brew process */
-    .brew { overflow: hidden; padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(44px, 9vw, 112px); align-items: center; }
-    .brew-visual { position: relative; min-height: 396px; border: 1px solid var(--line); background: linear-gradient(140deg, #f4fafb 0 50%, #e5f4f7 50%); }
-    .brew-visual::before { content: ""; position: absolute; top: 35px; left: 34px; width: 70px; height: 1px; background: var(--blue); box-shadow: 0 9px 0 var(--blue), 0 18px 0 var(--blue); }
-    .pour-ring { position: absolute; top: 71px; right: 48px; width: 240px; height: 240px; border: 35px solid rgba(12,91,149,.13); border-radius: 50%; }
-    .pour-ring::after { content: ""; position: absolute; top: 45px; left: 45px; width: 80px; height: 80px; border: 3px solid var(--blue); border-radius: 50%; }
-    .brew-v60 { position: absolute; bottom: 35px; left: 51%; width: 178px; height: 150px; border: 4px solid var(--blue); background: rgba(255,255,255,.54); clip-path: polygon(0 0,100% 0,73% 100%,27% 100%); transform: translateX(-50%); }
-    .brew-v60::before { content: ""; position: absolute; top: 14px; right: 16px; bottom: 0; left: 16px; border-left: 1px solid #8dcce0; border-right: 1px solid #8dcce0; transform: skewX(-11deg); }
-    .brew-caption { position: absolute; right: 25px; bottom: 21px; color: var(--blue); font: 600 10px/1.4 "Playfair Display", serif; letter-spacing: .13em; text-align: right; }
-    .brew-steps { display: grid; gap: 0; margin: 28px 0 0; padding: 0; list-style: none; }
-    .brew-steps li { display: grid; grid-template-columns: 43px 1fr; gap: 15px; padding: 17px 0; border-top: 1px solid var(--line); }
-    .brew-steps li:last-child { border-bottom: 1px solid var(--line); }
-    .step-no { color: var(--blue); font: 600 15px/1.7 "Playfair Display", serif; }
-    .step-copy b { display: block; font-size: 15px; }
-    .step-copy span { color: var(--muted); font-size: 13px; }
-
-    /* CTA and Footer */
-    .visit { position: relative; overflow: hidden; padding: 96px 0; color: #fff; background: var(--navy); text-align: center; }
-    .visit::before, .visit::after { content: ""; position: absolute; width: 370px; height: 370px; border: 1px solid rgba(117,198,232,.21); border-radius: 50%; }
-    .visit::before { top: -225px; left: -90px; }
-    .visit::after { right: -125px; bottom: -235px; }
-    .visit .wrap { position: relative; z-index: 1; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit .section-title { font-size: clamp(30px, 4vw, 45px); }
-    .visit p:not(.eyebrow) { max-width: 48ch; margin: 19px auto 28px; color: rgba(255,255,255,.73); }
-    .subscribe { display: flex; max-width: 500px; margin: 0 auto; border: 1px solid rgba(255,255,255,.5); }
-    .subscribe input { min-width: 0; flex: 1; padding: 13px 17px; border: 0; outline: none; color: #fff; background: transparent; }
-    .subscribe input::placeholder { color: rgba(255,255,255,.55); }
-    .subscribe button { padding: 0 22px; border: 0; color: var(--navy); background: var(--sand); font-size: 13px; font-weight: 700; white-space: nowrap; }
-    .subscribe button:hover { background: #f0c77f; }
-    footer { color: rgba(255,255,255,.67); background: #031c31; }
-    .footer-top { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 40px; padding: 58px 0 38px; }
-    .footer-brand { color: #fff; }
-    .footer-brand p { max-width: 31ch; margin: 16px 0 0; font-size: 13px; }
-    .footer-heading { margin: 0 0 15px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .14em; }
-    .footer-list { margin: 0; padding: 0; list-style: none; font-size: 13px; }
-    .footer-list li + li { margin-top: 8px; }
-    .footer-list a:hover { color: #fff; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 24px; padding: 17px 0; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.43); font-size: 11px; letter-spacing: .05em; }
-
-    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 20; max-width: min(330px, calc(100% - 44px)); padding: 13px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s, transform .25s; font-size: 13px; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 820px) {
-      .nav { min-height: 68px; }
-      .menu-toggle { display: block; width: 42px; height: 42px; font-size: 23px; }
-      .nav-links { position: absolute; top: 68px; right: 0; left: 0; display: grid; gap: 0; max-height: 0; overflow: hidden; background: #05233c; transition: max-height .27s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.12); }
-      .nav-links a { padding: 13px 24px; border-bottom: 1px solid rgba(255,255,255,.09); }
-      .nav-links .nav-cta { margin: 11px 24px; text-align: center; }
-      .hero, .hero-grid { min-height: 710px; }
-      .hero-grid { grid-template-columns: 1fr; padding-top: 115px; }
-      .hero-art { min-height: 278px; margin-top: -35px; }
-      .sun { right: 14%; width: 114px; height: 114px; }
-      .mountain { width: 82%; height: 92%; }
-      .coffee-vessel { right: 15%; transform: scale(.72); transform-origin: bottom right; }
-      .art-label { top: 44%; right: 1%; }
-      .intro-grid, .brew-grid { grid-template-columns: 1fr; }
-      .intro-stamp { max-width: 510px; width: 100%; }
-      .coffee-grid { grid-template-columns: 1fr 1fr; }
-      .coffee-card:last-child { grid-column: span 2; }
-      .footer-top { grid-template-columns: 1.4fr 1fr; }
-      .footer-brand { grid-column: span 2; }
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
     }
 
-    @media (max-width: 560px) {
-      .wrap { width: min(100% - 34px, 1120px); }
-      .hero, .hero-grid { min-height: 680px; }
-      .hero-grid { padding-top: 100px; padding-bottom: 48px; }
-      .hero-title { font-size: 40px; }
-      .hero-lede { margin: 18px 0 23px; font-size: 14px; }
-      .hero-art { min-height: 240px; }
-      .art-label { display: none; }
-      .scroll-line { bottom: 12px; left: 17px; }
-      .intro, .coffee-section, .brew { padding: 76px 0; }
-      .stamp-circle { width: 245px; height: 245px; }
-      .stamp-card { width: 185px; padding: 16px; }
-      .section-head { display: block; }
-      .section-head .section-copy { margin-top: 15px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:last-child { grid-column: auto; min-height: 330px; }
-      .coffee-content { min-height: 330px; }
-      .brew-visual { min-height: 310px; }
-      .pour-ring { top: 48px; right: 25px; width: 190px; height: 190px; border-width: 27px; }
-      .visit { padding: 76px 0; }
-      .subscribe { display: block; border: 0; }
-      .subscribe input { width: 100%; border: 1px solid rgba(255,255,255,.5); }
-      .subscribe button { width: 100%; min-height: 48px; margin-top: 9px; }
-      .footer-top { grid-template-columns: 1fr; gap: 30px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: block; }
-      .footer-bottom span + span { display: block; margin-top: 6px; }
+    .cart-drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 100%;
+      max-width: 420px;
+      height: 100%;
+      background: var(--white);
+      z-index: 2001;
+      box-shadow: -4px 0 25px rgba(0, 0, 0, 0.2);
+      transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.active {
+      right: 0;
+    }
+
+    .cart-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-header h3 {
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      font-weight: 800;
+    }
+
+    .btn-close-cart {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .btn-close-cart:hover {
+      color: var(--primary-dark);
+      transform: rotate(90deg);
+    }
+
+    .cart-items {
+      flex-grow: 1;
+      padding: 1.5rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .empty-cart-msg {
+      text-align: center;
+      color: var(--text-muted);
+      margin-top: 3rem;
+    }
+
+    .empty-cart-msg i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #cbd5e1;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .cart-item-info h4 {
+      font-size: 1rem;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .cart-item-price {
+      font-size: 0.9rem;
+      color: var(--cookie-golden);
+      font-weight: 600;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cart-qty-btn {
+      width: 28px;
+      height: 28px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .cart-footer {
+      padding: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      background: #f8fafc;
+    }
+
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .btn-checkout {
+      width: 100%;
+      background: var(--primary-blue);
+      color: white;
+      padding: 0.9rem;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-checkout:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary-dark);
+      color: white;
+      padding: 1rem 1.6rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 3000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+      .hero-desc {
+        margin: 0 auto 2.2rem;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-badges {
+        justify-content: center;
+      }
+      .story-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .hero-title {
+        font-size: 2.3rem;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      .promo-title {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <nav class="nav wrap" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark">B</span>
-        <span>藍天咖啡<small>BLUE SKY COFFEE</small></span>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-plane"></i>
+        </div>
+        <div class="brand-name">
+          <span class="brand-title">飛機餅乾</span>
+          <span class="brand-sub">HANDMADE COOKIES</span>
+        </div>
       </a>
-      <button class="menu-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="navLinks">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">我們的堅持</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
+
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">首頁</a></li>
+        <li><a href="#about" class="nav-link">關於手作</a></li>
+        <li><a href="#products" class="nav-link">經典餅乾</a></li>
+        <li><a href="#features" class="nav-link">品質堅持</a></li>
+        <li><a href="#reviews" class="nav-link">顧客好評</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="cart-btn" id="openCartBtn" title="查看購物車">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <a href="#products" class="btn-cta">
+          <i class="fa-solid fa-bag-shopping"></i> 立即選購
+        </a>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="hero-grid wrap">
-        <div class="reveal">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 class="hero-title" id="heroTitle">讓風味，<br>在<span class="blue">藍天</span>下<br>慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的你，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有自己的晴朗天氣。</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#coffee">探索本季風味 <span class="arrow">→</span></a>
-            <a class="button button-outline" href="#story">認識藍天</a>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <i class="fa-solid fa-certificate"></i> 100% 嚴選手工烘焙純天然配方
+        </div>
+        <h1 class="hero-title">
+          承載童年回憶，<br>
+          飛出純粹的<span>手作酥脆幸福</span>。
+        </h1>
+        <p class="hero-desc">
+          「飛機餅乾」專為熱愛手工餅乾的你量身打造。我們揉合頂級發酵奶油與減糖手作工藝，將經典可愛的飛機造型，注入細緻酥脆、濃醇乳香的全新生命。
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn-cta">
+            <i class="fa-solid fa-cart-shopping"></i> 探索人氣餅乾
+          </a>
+          <a href="#about" class="btn-secondary">
+            <i class="fa-solid fa-compass"></i> 了解品牌堅持
+          </a>
+        </div>
+        <div class="hero-badges">
+          <div class="hero-badge-item">
+            <div class="badge-icon"><i class="fa-solid fa-leaf"></i></div>
+            <div class="badge-info">
+              <h4>無人工添加</h4>
+              <p>無防腐劑、人工色素</p>
+            </div>
           </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2018</p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain"></div>
-          <div class="coffee-vessel"><div class="dripper"></div><div class="carafe"></div></div>
-          <p class="art-label"><strong>92°C</strong>理想水溫<br>細細喚醒香氣</p>
-        </div>
-      </div>
-      <p class="scroll-line">SCROLL TO DISCOVER</p>
-    </section>
-
-    <section class="intro" id="story" aria-labelledby="storyTitle">
-      <div class="intro-grid wrap">
-        <div class="intro-stamp reveal" aria-hidden="true">
-          <div class="stamp-circle"><div><strong>慢一點，<br>更清楚。</strong><span>LET THE FLAVOUR SPEAK</span></div></div>
-          <div class="stamp-card"><b>BLUE SKY NOTE</b><p>一杯好咖啡，從來不是匆忙完成的事。</p></div>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，<br>看見產地的<em>晴朗</em>。</h2>
-          <p class="section-copy">我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p class="section-copy">給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="intro-link" href="#brew">看看我們如何沖煮 <span>→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="coffee-section" id="coffee" aria-labelledby="coffeeTitle">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div><p class="eyebrow">SEASONAL SELECTION</p><h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<em>藍天</em>？</h2></div>
-          <p class="section-copy">三款當季單品，為不同的晨光、午後與靜夜而選。</p>
-        </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">01 / BRIGHT</span>
-              <p class="coffee-origin">ETHIOPIA · YIRGACHEFFE</p>
-              <h3>衣索比亞<br>耶加雪菲</h3>
-              <p class="coffee-notes">白花、佛手柑、蜂蜜</p>
-              <div class="coffee-bottom"><span class="price">NT$ 520 / 200g</span><button class="add-button" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
+          <div class="hero-badge-item">
+            <div class="badge-icon"><i class="fa-solid fa-heart"></i></div>
+            <div class="badge-info">
+              <h4>每日新鮮手作</h4>
+              <p>接單現烤酥脆出爐</p>
             </div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">02 / JUICY</span>
-              <p class="coffee-origin">KENYA · KIRINYAGA</p>
-              <h3>肯亞<br>祈安布</h3>
-              <p class="coffee-notes">黑醋栗、洛神、葡萄柚</p>
-              <div class="coffee-bottom"><span class="price">NT$ 580 / 200g</span><button class="add-button" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
+          </div>
+          <div class="hero-badge-item">
+            <div class="badge-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="badge-info">
+              <h4>產地直送到府</h4>
+              <p>氣密罐裝保鮮酥脆</p>
             </div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">03 / ROUND</span>
-              <p class="coffee-origin">COLOMBIA · HUILA</p>
-              <h3>哥倫比亞<br>慧蘭</h3>
-              <p class="coffee-notes">黃桃、焦糖、可可尾韻</p>
-              <div class="coffee-bottom"><span class="price">NT$ 460 / 200g</span><button class="add-button" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="cookie-showcase">
+          <div class="plane-art">
+            <i class="fa-solid fa-plane-up"></i>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 0.5rem;">
+            招牌奶香飛機餅乾
+          </h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">
+            金黃酥脆 × 頂級天然法國發酵奶油
+          </p>
+
+          <div class="float-card float-card-1">
+            <div class="icon-box"><i class="fa-solid fa-star"></i></div>
+            <div class="float-card-text">
+              <div class="title">回購率 No.1</div>
+              <div class="sub">熱銷突破 100,000 罐</div>
             </div>
-          </article>
+          </div>
+
+          <div class="float-card float-card-2">
+            <div class="icon-box"><i class="fa-solid fa-award"></i></div>
+            <div class="float-card-text">
+              <div class="title">減糖 30% 配方</div>
+              <div class="sub">酥脆輕盈無負擔</div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="brew-grid wrap">
-        <div class="brew-visual reveal" aria-hidden="true">
-          <div class="pour-ring"></div><div class="brew-v60"></div><p class="brew-caption">V60 / 15G : 240ML<br>2'45''</p>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，<br>讓咖啡說<em>自己的話</em>。</h2>
-          <p class="section-copy">不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <ol class="brew-steps">
-            <li><span class="step-no">01</span><span class="step-copy"><b>研磨，先聞見期待</b><span>15g 中細研磨，讓香氣從指尖開始展開。</span></span></li>
-            <li><span class="step-no">02</span><span class="step-copy"><b>悶蒸，等待第一個呼吸</b><span>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</span></span></li>
-            <li><span class="step-no">03</span><span class="step-copy"><b>注水，保持自己的節奏</b><span>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</span></span></li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 class="section-title" id="visitTitle">把下一杯好咖啡，<br>寄到你的日常裡。</h2>
-        <p>每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
-        <form class="subscribe" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="留下你的 Email" required>
-          <button type="submit">訂閱風味通信</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-top wrap">
-      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark">B</span><span>藍天咖啡<small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-heading">EXPLORE</p><ul class="footer-list"><li><a href="#story">我們的堅持</a></li><li><a href="#coffee">本季選豆</a></li><li><a href="#brew">沖煮日常</a></li></ul></div>
-      <div><p class="footer-heading">CONTACT</p><ul class="footer-list"><li><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a></li><li>台北市大安區晴朗路 18 號</li><li>每日 10:00 — 19:00</li></ul></div>
     </div>
-    <div class="footer-bottom wrap"><span>© 2026 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="section-header">
+      <div class="section-subtitle">OUR COMMITMENT</div>
+      <h2 class="section-title">為何大家深深愛上「飛機餅乾」？</h2>
+      <p class="section-desc">我們堅信，真正動人的美味源於最純淨的初心。每一片飛機餅乾都經過多道細緻手作工序，只為帶給你最安心滿足的午後食光。</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <i class="fa-solid fa-wheat-awn"></i>
+        </div>
+        <h3 class="feature-title">嚴選日本頂級麵粉</h3>
+        <p class="feature-text">採用日本進口小麥麵粉，顆粒細緻、麥香甘醇，賦予餅乾極致酥脆且入口即化的迷人口感。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <i class="fa-solid = fa-cow fa-mortar-pestle"></i>
+        </div>
+        <h3 class="feature-title">法國天然發酵奶油</h3>
+        <p class="feature-text">堅持使用百分之百草飼乳源製成的發酵奶油，無人工反式脂肪，散發出清新高雅的濃純乳香。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <i class="fa-solid fa-fire-burner"></i>
+        </div>
+        <h3 class="feature-title">低溫慢烤匠心工藝</h3>
+        <p class="feature-text">不走捷徑的慢火溫控烘烤，鎖住餅乾精華與水分平衡，金黃上色均勻，每一口都喀滋作響。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <i class="fa-solid fa-box-open"></i>
+        </div>
+        <h3 class="feature-title">航空級密封鎖鮮罐</h3>
+        <p class="feature-text">高規格食品級密封保鮮包裝，隔絕濕氣與空氣，即便開罐享用多次，依舊如同剛出爐般酥脆。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <div class="section-header">
+      <div class="section-subtitle">POPULAR FLAVORS</div>
+      <h2 class="section-title">熱銷手工飛機餅乾系列</h2>
+      <p class="section-desc">多款經典與創新風味，無論是佐茶下午茶、辦公室療癒零嘴，或餽贈摯友的質感好禮，都是最棒的選擇！</p>
+    </div>
+
+    <div class="products-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <span class="product-badge gold"><i class="fa-solid fa-crown"></i> 人氣熱銷 No.1</span>
+          <i class="fa-solid fa-plane product-shape-icon" style="color: #f59e0b;"></i>
+        </div>
+        <div class="product-info">
+          <div class="product-tags">
+            <span class="product-tag">經典原創</span>
+            <span class="product-tag">純奶香</span>
+          </div>
+          <h3 class="product-title">經典原味奶香飛機餅乾</h3>
+          <p class="product-desc">濃郁純粹的牛奶香氣，搭配微微鹹香點綴，還原童年最幸福的味道，酥脆不膩口！</p>
+          <div class="product-bottom">
+            <div class="product-price">
+              <span class="original-price">NT$ 180</span>
+              <span class="current-price"><span>NT$</span> 150</span>
+            </div>
+            <button class="btn-add-cart" onclick="addToCart('經典原味奶香飛機餅乾', 150)" title="加入購物車">
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <span class="product-badge">濃郁大人味</span>
+          <i class="fa-solid fa-plane product-shape-icon" style="color: #78350f;"></i>
+        </div>
+        <div class="product-info">
+          <div class="product-tags">
+            <span class="product-tag">法芙娜可可</span>
+            <span class="product-tag">苦甜濃郁</span>
+          </div>
+          <h3 class="product-title">法芙娜黑可可飛機餅乾</h3>
+          <p class="product-desc">選用頂級法芙娜深黑可可粉，苦甜交織出奢華層次，巧克力愛好者絕對無法抗拒的極致享受。</p>
+          <div class="product-bottom">
+            <div class="product-price">
+              <span class="original-price">NT$ 210</span>
+              <span class="current-price"><span>NT$</span> 175</span>
+            </div>
+            <button class="btn-add-cart" onclick="addToCart('法芙娜黑可可飛機餅乾', 175)" title="加入購物車">
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <span class="product-badge teal">日式雅韻</span>
+          <i class="fa-solid fa-plane product-shape-icon" style="color: #15803d;"></i>
+        </div>
+        <div class="product-info">
+          <div class="product-tags">
+            <span class="product-tag">宇治抹茶</span>
+            <span class="product-tag">清爽回甘</span>
+          </div>
+          <h3 class="product-title">京都宇治抹茶飛機餅乾</h3>
+          <p class="product-desc">嚴選京都宇治一番茶磨製抹茶粉，茶香幽雅深邃，入口甘甜不苦澀，午後佐茶首選。</p>
+          <div class="product-bottom">
+            <div class="product-price">
+              <span class="original-price">NT$ 220</span>
+              <span class="current-price"><span>NT$</span> 180</span>
+            </div>
+            <button class="btn-add-cart" onclick="addToCart('京都宇治抹茶飛機餅乾', 180)" title="加入購物車">
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-image-container">
+          <span class="product-badge gold">主廚特調</span>
+          <i class="fa-solid fa-plane product-shape-icon" style="color: #b45309;"></i>
+        </div>
+        <div class="product-info">
+          <div class="product-tags">
+            <span class="product-tag">海鹽焦糖</span>
+            <span class="product-tag">多層次</span>
+          </div>
+          <h3 class="product-title">法式海鹽焦糖飛機餅乾</h3>
+          <p class="product-desc">自製慢火熬煮焦糖，撒上法國葛宏德鹽之花，微鹹激發濃郁甜香，一口接著一口停不下來！</p>
+          <div class="product-bottom">
+            <div class="product-price">
+              <span class="original-price">NT$ 220</span>
+              <span class="current-price"><span>NT$</span> 185</span>
+            </div>
+            <button class="btn-add-cart" onclick="addToCart('法式海鹽焦糖飛機餅乾', 185)" title="加入購物車">
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Special Promo CTA inside products section -->
+    <div class="promo-banner">
+      <div class="promo-title"><i class="fa-solid fa-plane-departure"></i> 啟航限時優惠！滿 NT$ 699 即享全台免運</div>
+      <p class="promo-desc">
+        新會員首購結帳輸入專屬折扣代碼「<strong>PLANECOOKIE</strong>」，即享現折 NT$ 50，再贈精緻飛行提袋！
+      </p>
+      <button class="promo-btn" onclick="openCart()">
+        <i class="fa-solid fa-bolt"></i> 立即把握優惠下單
+      </button>
+    </div>
+  </section>
+
+  <!-- Story & About Section -->
+  <section id="about">
+    <div class="story-container">
+      <div class="story-image-box">
+        <i class="fa-solid fa-cookie-bite" style="font-size: 5rem; margin-bottom: 1.5rem; color: #fef08a;"></i>
+        <h3>手作的溫度，無可取代</h3>
+        <p>「小時候，一片小小的飛機餅乾就能載著我們的想像力飛向雲端。」</p>
+      </div>
+
+      <div class="story-content">
+        <div class="section-subtitle">BRAND STORY</div>
+        <h2 class="section-title" style="text-align: left; margin-bottom: 1.2rem;">
+          堅持用雙手的溫度，<br>烘焙每一個純粹時刻
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+          在大量機械化快速生產的時代，我們選擇了一條更慢、卻更值得的道路。每塊「飛機餅乾」都經由烘焙師傅耐心揉麵、細心壓模、溫控慢火焙烤。
+        </p>
+        <ul class="story-points">
+          <li>
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <strong>嚴選純天然食材：</strong>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">絕不添加防腐劑、膨鬆劑與化學香精，讓大人小孩都能安心大口享用。</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <strong>黃金酥脆減糖比例：</strong>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">經過上百次試吃調配，降低30%糖分，保留醇濃奶香，百吃不膩。</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <strong>送禮自用質感包裝：</strong>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">經典航空旅行藍色調視覺設計，兼具極佳密封性與美感品味。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Reviews -->
+  <section class="testimonials" id="reviews">
+    <div class="section-header">
+      <div class="section-subtitle">TESTIMONIALS</div>
+      <h2 class="section-title">餅乾愛好者的真實回饋</h2>
+      <p class="section-desc">超過 5,000 位滿意顧客好評推薦，讓我們成為日常辦公室與家庭時光最溫暖的陪伴。</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="testimonial-text">
+          「一開罐奶香味就撲鼻而來！口感非常酥脆扎實，完全沒有市售量產餅乾的油耗味，減糖配方讓我追劇不知不覺就嗑完半罐！」
+        </p>
+        <div class="customer-info">
+          <div class="avatar">林</div>
+          <div>
+            <div class="customer-name">林小姐</div>
+            <div class="customer-role">甜點熱愛者 / 上班族</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="testimonial-text">
+          「黑可可口味太驚豔了！微苦的巧克力風味很有深度，搭配黑咖啡簡直是絕配。包裝很精美，非常適合當伴手禮送給朋友！」
+        </p>
+        <div class="customer-info">
+          <div class="avatar">陳</div>
+          <div>
+            <div class="customer-name">陳先生</div>
+            <div class="customer-role">咖啡師 / 美食部落客</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="testimonial-text">
+          「給家裡兩個小朋友買的，無防腐劑跟天然奶油讓人很放心。造型可愛，小朋友愛不釋手，我自己也忍不住偷吃了好幾塊！」
+        </p>
+        <div class="customer-info">
+          <div class="avatar">張</div>
+          <div>
+            <div class="customer-name">張太太</div>
+            <div class="customer-role">雙寶媽咪</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3><i class="fa-solid fa-plane"></i> 飛機餅乾</h3>
+        <p>堅持匠心純手作，重拾童年純粹記憶。我們用最好的原料、最踏實的工法，為每一位餅乾愛好者烘焙香醇幸福。</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link" title="Line"><i class="fa-brands fa-line"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>快速導覽</h4>
+        <ul class="footer-links">
+          <li><a href="#home">品牌首頁</a></li>
+          <li><a href="#about">手作堅持</a></li>
+          <li><a href="#products">全部商品</a></li>
+          <li><a href="#features">品質保證</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>客戶服務</h4>
+        <ul class="footer-links">
+          <li><a href="#">常見問題 FAQ</a></li>
+          <li><a href="#">運送與退換貨</a></li>
+          <li><a href="#">企業大宗採購</a></li>
+          <li><a href="#">隱私權保護政策</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>聯絡我們</h4>
+        <ul class="footer-links" style="line-height: 1.8;">
+          <li><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> 台灣台北市大安區手作烘焙工坊</li>
+          <li><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> (02) 2345-6789</li>
+          <li><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> service@planecookie.tw</li>
+          <li><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> 週一至週五 09:30 - 18:30</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 飛機餅乾 (Plane Cookie Handmade Bakery). All Rights Reserved. 學號：11515128</p>
+    </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- Shopping Cart Drawer Modal -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-basket-shopping"></i> 我的購物袋</h3>
+      <button class="btn-close-cart" id="closeCartBtn">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItemsContainer">
+      <div class="empty-cart-msg">
+        <i class="fa-solid fa-cookie"></i>
+        <p>購物袋目前空空的喔！<br>快去挑選香脆的飛機餅乾吧！</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>結帳總計</span>
+        <span id="cartTotalPrice">NT$ 0</span>
+      </div>
+      <button class="btn-checkout" onclick="checkout()">
+        <i class="fa-solid fa-credit-card"></i> 前往結帳
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check" style="color: #4ade80; font-size: 1.2rem;"></i>
+    <span id="toastMsg">已加入購物車！</span>
+  </div>
+
+  <!-- JavaScript Interaction -->
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', open);
-      menuToggle.setAttribute('aria-label', open ? '關閉導覽選單' : '開啟導覽選單');
-      menuToggle.textContent = open ? '×' : '☰';
-    });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', '開啟導覽選單');
-      menuToggle.textContent = '☰';
-    }));
+    // Shopping Cart State
+    let cart = [];
 
+    const openCartBtn = document.getElementById('openCartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartBadge = document.getElementById('cartBadge');
+    const cartItemsContainer = document.getElementById('cartItemsContainer');
+    const cartTotalPrice = document.getElementById('cartTotalPrice');
     const toast = document.getElementById('toast');
-    let toastTimer;
-    function showToast(message) {
-      window.clearTimeout(toastTimer);
-      toast.textContent = message;
-      toast.classList.add('show');
-      toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2600);
-    }
-    document.querySelectorAll('[data-coffee]').forEach(button => button.addEventListener('click', () => {
-      showToast(`已將「${button.dataset.coffee}」加入你的收藏。`);
-    }));
-    document.getElementById('subscribeForm').addEventListener('submit', event => {
-      event.preventDefault();
-      event.currentTarget.reset();
-      showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
-    });
+    const toastMsg = document.getElementById('toastMsg');
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealItems = document.querySelectorAll('.reveal');
-    if (reducedMotion || !('IntersectionObserver' in window)) {
-      revealItems.forEach(item => item.classList.add('visible'));
-    } else {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: .12 });
-      revealItems.forEach(item => observer.observe(item));
+    // Cart Open/Close Event Listeners
+    function openCart() {
+      cartDrawer.classList.add('active');
+      cartOverlay.classList.add('active');
+    }
+
+    function closeCart() {
+      cartDrawer.classList.remove('active');
+      cartOverlay.classList.remove('active');
+    }
+
+    openCartBtn.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+
+    // Toast Notification Trigger
+    function showToast(message) {
+      toastMsg.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    // Add To Cart Function
+    function addToCart(name, price) {
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      updateCartUI();
+      showToast(`已將「${name}」加入購物車！`);
+    }
+
+    // Quantity Modification
+    function changeQty(index, delta) {
+      if (cart[index]) {
+        cart[index].qty += delta;
+        if (cart[index].qty <= 0) {
+          cart.splice(index, 1);
+        }
+      }
+      updateCartUI();
+    }
+
+    // Update Cart UI
+    function updateCartUI() {
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartBadge.textContent = totalItems;
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+          <div class="empty-cart-msg">
+            <i class="fa-solid fa-cookie"></i>
+            <p>購物袋目前空空的喔！<br>快去挑選香脆的飛機餅乾吧！</p>
+          </div>
+        `;
+        cartTotalPrice.textContent = 'NT$ 0';
+        return;
+      }
+
+      let total = 0;
+      cartItemsContainer.innerHTML = '';
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+
+        const itemEl = document.createElement('div');
+        itemEl.className = 'cart-item';
+        itemEl.innerHTML = `
+          <div class="cart-item-info">
+            <h4>${item.name}</h4>
+            <div class="cart-item-price">NT$ ${item.price} × ${item.qty} = NT$ ${itemTotal}</div>
+          </div>
+          <div class="cart-item-controls">
+            <button class="cart-qty-btn" onclick="changeQty(${index}, -1)">-</button>
+            <span style="font-weight: 700; min-width: 20px; text-align: center;">${item.qty}</span>
+            <button class="cart-qty-btn" onclick="changeQty(${index}, 1)">+</button>
+          </div>
+        `;
+        cartItemsContainer.appendChild(itemEl);
+      });
+
+      cartTotalPrice.textContent = `NT$ ${total}`;
+    }
+
+    // Checkout Flow Simulation
+    function checkout() {
+      if (cart.length === 0) {
+        alert('您的購物袋是空的，請先挑選商品！');
+        return;
+      }
+      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      alert(`感謝您的選購！訂單總金額為 NT$ ${total}。\n即將為您轉接安全結帳頁面！`);
+      cart = [];
+      updateCartUI();
+      closeCart();
     }
   </script>
 </body>
