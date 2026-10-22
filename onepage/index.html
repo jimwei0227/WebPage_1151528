@@ -3,33 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>飛機餅乾 | 官方單頁網站 (One-Page Experience)</title>
-  <!-- Google Fonts -->
+  <title>飛機餅乾 | 官方品牌購物網站 (Plane Cookie Handmade Bakery)</title>
+  <meta name="description" content="飛機餅乾官方品牌與購物形象網站，承載童年回憶，飛出純粹的手作酥脆幸福。100% 嚴選手工烘焙、頂級法國發酵奶油與減糖 30% 輕盈配方。學號：11515128。">
+  
+  <!-- Google Fonts: Noto Sans TC & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
+  
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     :root {
+      /* Primary Navy & Royal Blue */
       --primary-blue: #1d4ed8;
       --primary-dark: #1e3a8a;
       --primary-light: #3b82f6;
       --accent-sky: #0284c7;
       --sky-bg: #f0f9ff;
       --sky-light: #e0f2fe;
-      --warm-cream: #fffdfa;
+
+      /* Accent Golden */
       --cookie-golden: #d97706;
+      --cookie-accent: #f59e0b;
       --cookie-light: #fef3c7;
+
+      /* Neutral & Background */
+      --warm-cream: #fffdf9;
       --text-dark: #1e293b;
       --text-muted: #64748b;
       --border-color: #e2e8f0;
       --white: #ffffff;
+
+      /* Shadows & Radii */
       --shadow-sm: 0 2px 8px rgba(30, 58, 138, 0.06);
       --shadow-md: 0 8px 24px rgba(30, 58, 138, 0.1);
       --shadow-lg: 0 16px 36px rgba(30, 58, 138, 0.15);
-      --radius: 16px;
+      --radius-sm: 16px;
+      --radius-md: 24px;
+      --radius-lg: 30px;
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -41,7 +54,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px; /* Offset for sticky navbar */
+      scroll-padding-top: 80px;
     }
 
     body {
@@ -52,12 +65,12 @@
       overflow-x: hidden;
     }
 
-    /* Header & Navigation (One-Page Scrollspy) */
+    /* Header & Navigation */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(14px);
       box-shadow: 0 2px 14px rgba(30, 58, 138, 0.06);
       border-bottom: 1px solid rgba(226, 232, 240, 0.85);
@@ -218,6 +231,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      min-height: 44px;
     }
 
     .btn-cta:hover {
@@ -233,9 +247,46 @@
       font-size: 1.5rem;
       color: var(--primary-dark);
       cursor: pointer;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* Hero Section */
+    /* Global Section Styles */
+    section {
+      padding: 5.5rem 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--accent-sky);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* 1. Hero Section */
     .hero {
       position: relative;
       padding: 5.5rem 2rem 6.5rem;
@@ -308,6 +359,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      min-height: 44px;
     }
 
     .btn-secondary:hover {
@@ -354,7 +406,7 @@
       color: var(--text-muted);
     }
 
-    /* Hero Showcase Card */
+    /* Hero Showcase 3D Visual */
     .hero-visual {
       display: flex;
       justify-content: center;
@@ -462,40 +514,7 @@
       font-weight: 600;
     }
 
-    /* Section Global Styles */
-    section {
-      padding: 5.5rem 2rem;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto 3.5rem;
-    }
-
-    .section-subtitle {
-      color: var(--accent-sky);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-title {
-      font-size: 2.3rem;
-      font-weight: 800;
-      color: var(--primary-dark);
-      margin-bottom: 1rem;
-    }
-
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    /* About Section */
+    /* 2. Story & About Section (有關手作) */
     .story-container {
       max-width: 1100px;
       margin: 0 auto;
@@ -507,7 +526,7 @@
 
     .story-image-box {
       background: linear-gradient(135deg, #93c5fd, #3b82f6);
-      border-radius: 30px;
+      border-radius: var(--radius-lg);
       padding: 3rem 2.5rem;
       text-align: center;
       color: white;
@@ -544,69 +563,7 @@
       margin-top: 4px;
     }
 
-    /* Features Section */
-    .features {
-      background: #f8fafc;
-    }
-
-    .features-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .feature-card {
-      background: var(--white);
-      padding: 2.2rem 1.8rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border-color);
-      transition: var(--transition);
-      text-align: center;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-md);
-      border-color: #bfdbfe;
-    }
-
-    .feature-icon-wrapper {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 1.5rem;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #eff6ff, #dbeafe);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      color: var(--primary-blue);
-      transition: var(--transition);
-    }
-
-    .feature-card:hover .feature-icon-wrapper {
-      background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
-      color: var(--white);
-      transform: scale(1.08);
-    }
-
-    .feature-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin-bottom: 0.8rem;
-    }
-
-    .feature-text {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    /* Products Section & Filter Tabs */
+    /* 3. Products Section (經典餅乾) */
     .filter-tabs {
       display: flex;
       justify-content: center;
@@ -625,6 +582,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
+      min-height: 44px;
     }
 
     .filter-btn:hover,
@@ -645,7 +603,7 @@
 
     .product-card {
       background: var(--white);
-      border-radius: var(--radius);
+      border-radius: var(--radius-sm);
       overflow: hidden;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-color);
@@ -793,7 +751,7 @@
     .promo-banner {
       background: linear-gradient(135deg, var(--primary-dark), #1d4ed8);
       color: white;
-      border-radius: 24px;
+      border-radius: var(--radius-md);
       max-width: 1200px;
       margin: 3.5rem auto 0;
       padding: 3.5rem 3rem;
@@ -842,6 +800,7 @@
       transition: var(--transition);
       border: none;
       cursor: pointer;
+      min-height: 44px;
     }
 
     .promo-btn:hover {
@@ -850,7 +809,69 @@
       box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
     }
 
-    /* Testimonials Section */
+    /* 4. Features Section (品質堅持) */
+    .features {
+      background: #f8fafc;
+    }
+
+    .features-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 2.2rem 1.8rem;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: #bfdbfe;
+    }
+
+    .feature-icon-wrapper {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .feature-card:hover .feature-icon-wrapper {
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+      color: var(--white);
+      transform: scale(1.08);
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* 5. Testimonials Section (顧客好評) */
     .testimonials {
       background: var(--sky-bg);
     }
@@ -866,7 +887,7 @@
     .testimonial-card {
       background: var(--white);
       padding: 2.2rem;
-      border-radius: var(--radius);
+      border-radius: var(--radius-sm);
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-color);
     }
@@ -915,7 +936,7 @@
       color: var(--text-muted);
     }
 
-    /* FAQ Section */
+    /* 6. FAQ Section */
     .faq-container {
       max-width: 800px;
       margin: 0 auto;
@@ -966,7 +987,7 @@
       border-top: 1px solid var(--border-color);
     }
 
-    /* Contact Section */
+    /* 7. Contact Section */
     .contact-section {
       background: #f8fafc;
     }
@@ -979,7 +1000,7 @@
       gap: 3.5rem;
       background: var(--white);
       padding: 3.5rem;
-      border-radius: 24px;
+      border-radius: var(--radius-md);
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-color);
     }
@@ -1048,6 +1069,7 @@
       font-size: 0.95rem;
       transition: var(--transition);
       background: #fdfdfd;
+      min-height: 44px;
     }
 
     .form-control:focus {
@@ -1061,7 +1083,7 @@
       min-height: 110px;
     }
 
-    /* Footer */
+    /* 8. Footer */
     footer {
       background: #0f172a;
       color: #94a3b8;
@@ -1100,8 +1122,8 @@
     }
 
     .social-link {
-      width: 38px;
-      height: 38px;
+      width: 44px;
+      height: 44px;
       background: #1e293b;
       color: var(--white);
       border-radius: 50%;
@@ -1212,6 +1234,11 @@
       cursor: pointer;
       color: var(--text-muted);
       transition: var(--transition);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .btn-close-cart:hover {
@@ -1267,13 +1294,21 @@
     }
 
     .cart-qty-btn {
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       border: 1px solid #cbd5e1;
       background: #f8fafc;
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .cart-qty-btn:hover {
+      background: #e2e8f0;
     }
 
     .cart-footer {
@@ -1306,6 +1341,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+      min-height: 48px;
     }
 
     .btn-checkout:hover {
@@ -1371,7 +1407,7 @@
       transform: translateY(-4px);
     }
 
-    /* Responsive Design */
+    /* Responsive Breakpoints */
     @media (max-width: 992px) {
       .hero-container {
         grid-template-columns: 1fr;
@@ -1399,7 +1435,7 @@
 
     @media (max-width: 768px) {
       .mobile-menu-btn {
-        display: block;
+        display: flex;
       }
       .nav-menu {
         position: absolute;
@@ -1444,16 +1480,16 @@
         </div>
       </a>
 
+      <!-- 3.1 導覽錨點選單 (Nav Links) -->
       <ul class="nav-menu" id="navMenu">
         <li><a href="#home" class="nav-link active">首頁</a></li>
-        <li><a href="#about" class="nav-link">關於手作</a></li>
-        <li><a href="#features" class="nav-link">品質堅持</a></li>
+        <li><a href="#about" class="nav-link">有關手作</a></li>
         <li><a href="#products" class="nav-link">經典餅乾</a></li>
+        <li><a href="#features" class="nav-link">品質堅持</a></li>
         <li><a href="#reviews" class="nav-link">顧客好評</a></li>
-        <li><a href="#faq" class="nav-link">常見問題</a></li>
-        <li><a href="#contact" class="nav-link">聯絡訂購</a></li>
       </ul>
 
+      <!-- 快捷操作功能 (Action Buttons) -->
       <div class="header-actions">
         <button class="cart-btn" id="openCartBtn" title="查看購物車">
           <i class="fa-solid fa-basket-shopping"></i>
@@ -1462,14 +1498,14 @@
         <a href="#products" class="btn-cta">
           <i class="fa-solid fa-bag-shopping"></i> 立即選購
         </a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="切換導覽選單">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- 1. Hero Section -->
+  <!-- 3.2 首頁視覺大圖區 (Hero Section) -->
   <section class="hero" id="home">
     <div class="hero-container">
       <div class="hero-content">
@@ -1481,16 +1517,18 @@
           飛出純粹的<span>手作酥脆幸福</span>。
         </h1>
         <p class="hero-desc">
-          「飛機餅乾」專為熱愛手工餅乾的你量身打造。我們揉合頂級發酵奶油與減糖手作工藝，將經典可愛的飛機造型，注入細緻酥脆、濃醇乳香的全新生命。
+          「飛機餅乾」專為熱愛手工餅乾的你量身打造。我們揉合頂級法國發酵奶油與減糖 30% 輕盈手作工藝，將經典可愛的飛機造型，注入細緻酥脆、濃醇乳香的全新生命。
         </p>
         <div class="hero-actions">
           <a href="#products" class="btn-cta">
             <i class="fa-solid fa-cart-shopping"></i> 探索人氣餅乾
           </a>
           <a href="#about" class="btn-secondary">
-            <i class="fa-solid fa-compass"></i> 了解品牌堅持
+            <i class="fa-solid fa-compass"></i> 了解更多品牌堅持
           </a>
         </div>
+        
+        <!-- 三大信賴標章 (Trust Badges) -->
         <div class="hero-badges">
           <div class="hero-badge-item">
             <div class="badge-icon"><i class="fa-solid fa-leaf"></i></div>
@@ -1510,12 +1548,13 @@
             <div class="badge-icon"><i class="fa-solid fa-truck-fast"></i></div>
             <div class="badge-info">
               <h4>產地直送到府</h4>
-              <p>氣密罐裝保鮮酥脆</p>
+              <p>氣密罐裝保鮮</p>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- 立體視覺卡片 (Showcase Visual) -->
       <div class="hero-visual">
         <div class="cookie-showcase">
           <div class="plane-art">
@@ -1548,7 +1587,7 @@
     </div>
   </section>
 
-  <!-- 2. Story & About Section -->
+  <!-- 3.5 品牌故事與理念 (About & Brand Story / 有關手作) -->
   <section id="about">
     <div class="story-container">
       <div class="story-image-box">
@@ -1563,27 +1602,29 @@
           堅持用雙手的溫度，<br>烘焙每一個純粹時刻
         </h2>
         <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
-          在大量機械化快速生產的時代，我們選擇了一條更慢、卻更值得的道路。每塊「飛機餅乾」都經由烘焙師傅耐心揉麵、細心壓模、溫控慢火焙烤。
+          在大量機械化快速生產的時代，我們選擇了一條更慢、卻更值得的道路。每塊「飛機餅乾」都經由烘焙師傅耐心揉麵、細心壓模、溫控慢火焙烤，重新詮釋那份藏在童年記憶深處的純粹酥脆幸福。
         </p>
+        
+        <!-- 品質三大守則清單 -->
         <ul class="story-points">
           <li>
             <i class="fa-solid fa-circle-check"></i>
             <div>
-              <strong>嚴選純天然食材：</strong>
+              <strong>純天然無化學添加：</strong>
               <p style="color: var(--text-muted); font-size: 0.95rem;">絕不添加防腐劑、膨鬆劑與化學香精，讓大人小孩都能安心大口享用。</p>
             </div>
           </li>
           <li>
             <i class="fa-solid fa-circle-check"></i>
             <div>
-              <strong>黃金酥脆減糖比例：</strong>
-              <p style="color: var(--text-muted); font-size: 0.95rem;">經過上百次試吃調配，降低30%糖分，保留醇濃奶香，百吃不膩。</p>
+              <strong>減糖低負擔黃金比例：</strong>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">經過上百次試吃調配，降低 30% 糖分，保留醇濃奶香，百吃不膩。</p>
             </div>
           </li>
           <li>
             <i class="fa-solid fa-circle-check"></i>
             <div>
-              <strong>送禮自用質感包裝：</strong>
+              <strong>送禮質感精緻包裝：</strong>
               <p style="color: var(--text-muted); font-size: 0.95rem;">經典航空旅行藍色調視覺設計，兼具極佳密封性與美感品味。</p>
             </div>
           </li>
@@ -1592,14 +1633,145 @@
     </div>
   </section>
 
-  <!-- 3. Features Section -->
+  <!-- 3.4 人氣熱銷商品區 (Featured Products & Shopping / 經典餅乾) -->
+  <section id="products">
+    <div class="section-header">
+      <div class="section-subtitle">POPULAR FLAVORS</div>
+      <h2 class="section-title">熱銷手工飛機餅乾系列</h2>
+      <p class="section-desc">多款經典與創新風味，無論是佐茶下午茶、辦公室療癒零嘴，或餽贈摯友的質感好禮，都是最棒的選擇！</p>
+    </div>
+
+    <!-- 分類篩選按鈕 -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" onclick="filterCategory('all', this)">全部商品 (4)</button>
+      <button class="filter-btn" onclick="filterCategory('classic', this)">經典原味</button>
+      <button class="filter-btn" onclick="filterCategory('special', this)">濃郁特調</button>
+      <button class="filter-btn" onclick="filterCategory('tea', this)">茶香清爽</button>
+    </div>
+
+    <div class="products-grid">
+      <!-- 1. 經典原味奶香飛機餅乾 -->
+      <div class="product-card" data-category="classic">
+        <div class="product-image-container">
+          <span class="product-badge gold"><i class="fa-solid fa-crown"></i> 人氣熱銷 No.1</span>
+          <i class="fa-solid fa-plane product-shape-icon" style="color: #f59e0b;"></i>
+        </div>
+        <div class="product-info">
+          <div class="product-tags">
+            <span class="product-tag">經典原創</span>
+            <span class="product-tag">純奶香</span>
+          </div>
+          <h3 class="product-title">經典原味奶香飛機餅乾</h3>
+          <p class="product-desc">濃郁純粹的牛奶香氣，搭配微微鹹香點綴，還原童年最幸福的味道，酥脆不膩口！</p>
+          <div class="product-bottom">
+            <div class="product-price">
+              <span class="original-price">NT$ 180</span>
+              <span class="current-price"><span>NT$</span> 150</span>
+            </div>
+            <button class="btn-add-cart" onclick="addToCart('經典原味奶香飛機餅乾', 150)" title="加入購物車">
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 法芙娜黑可可飛機餅乾 -->
+      <div class="product-card" data-category="special">
+        <div class="product-image-container">
+          <span class="product-badge">濃郁大人味</span>
+          <i class="fa-solid fa-plane product-shape-icon" style="color: #78350f;"></i>
+        </div>
+        <div class="product-info">
+          <div class="product-tags">
+            <span class="product-tag">法芙娜可可</span>
+            <span class="product-tag">苦甜濃郁</span>
+          </div>
+          <h3 class="product-title">法芙娜黑可可飛機餅乾</h3>
+          <p class="product-desc">選用頂級法芙娜深黑可可粉，苦甜交織出奢華層次，巧克力愛好者絕對無法抗拒的極致享受。</p>
+          <div class="product-bottom">
+            <div class="product-price">
+              <span class="original-price">NT$ 210</span>
+              <span class="current-price"><span>NT$</span> 175</span>
+            </div>
+            <button class="btn-add-cart" onclick="addToCart('法芙娜黑可可飛機餅乾', 175)" title="加入購物車">
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 京都宇治抹茶飛機餅乾 -->
+      <div class="product-card" data-category="tea">
+        <div class="product-image-container">
+          <span class="product-badge teal">日式雅韻</span>
+          <i class="fa-solid fa-plane product-shape-icon" style="color: #15803d;"></i>
+        </div>
+        <div class="product-info">
+          <div class="product-tags">
+            <span class="product-tag">宇治抹茶</span>
+            <span class="product-tag">清爽回甘</span>
+          </div>
+          <h3 class="product-title">京都宇治抹茶飛機餅乾</h3>
+          <p class="product-desc">嚴選京都宇治一番茶磨製抹茶粉，茶香幽雅深邃，入口甘甜不苦澀，午後佐茶首選。</p>
+          <div class="product-bottom">
+            <div class="product-price">
+              <span class="original-price">NT$ 220</span>
+              <span class="current-price"><span>NT$</span> 180</span>
+            </div>
+            <button class="btn-add-cart" onclick="addToCart('京都宇治抹茶飛機餅乾', 180)" title="加入購物車">
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 法式海鹽焦糖飛機餅乾 -->
+      <div class="product-card" data-category="special">
+        <div class="product-image-container">
+          <span class="product-badge gold">主廚特調</span>
+          <i class="fa-solid fa-plane product-shape-icon" style="color: #b45309;"></i>
+        </div>
+        <div class="product-info">
+          <div class="product-tags">
+            <span class="product-tag">海鹽焦糖</span>
+            <span class="product-tag">多層次</span>
+          </div>
+          <h3 class="product-title">法式海鹽焦糖飛機餅乾</h3>
+          <p class="product-desc">自製慢火熬煮焦糖，撒上法國葛宏德鹽之花，微鹹激發濃郁甜香，一口接著一口停不下來！</p>
+          <div class="product-bottom">
+            <div class="product-price">
+              <span class="original-price">NT$ 220</span>
+              <span class="current-price"><span>NT$</span> 185</span>
+            </div>
+            <button class="btn-add-cart" onclick="addToCart('法式海鹽焦糖飛機餅乾', 185)" title="加入購物車">
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 促銷引導橫幅 (Promo Banner) -->
+    <div class="promo-banner">
+      <div class="promo-title"><i class="fa-solid fa-plane-departure"></i> 啟航限時優惠！滿 NT$ 699 即享全台免運</div>
+      <p class="promo-desc">
+        新會員首購結帳輸入專屬折扣代碼「<strong>PLANECOOKIE</strong>」，即享現折 NT$ 50，再贈精緻飛行提袋！
+      </p>
+      <button class="promo-btn" onclick="openCart()">
+        <i class="fa-solid fa-bolt"></i> 立即把握優惠下單
+      </button>
+    </div>
+  </section>
+
+  <!-- 3.3 品質承諾與堅持 (Brand Commitment / Features / 品質堅持) -->
   <section class="features" id="features">
     <div class="section-header">
       <div class="section-subtitle">OUR COMMITMENT</div>
-      <h2 class="section-title">為何大家深深愛上「飛機餅乾」？</h2>
+      <h2 class="section-title">品質承諾與堅持</h2>
       <p class="section-desc">我們堅信，真正動人的美味源於最純淨的初心。每一片飛機餅乾都經過多道細緻手作工序，只為帶給你最安心滿足的午後食光。</p>
     </div>
 
+    <!-- 4 欄式卡片 -->
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon-wrapper">
@@ -1635,145 +1807,16 @@
     </div>
   </section>
 
-  <!-- 4. Products Section -->
-  <section id="products">
-    <div class="section-header">
-      <div class="section-subtitle">POPULAR FLAVORS</div>
-      <h2 class="section-title">熱銷手工飛機餅乾系列</h2>
-      <p class="section-desc">多款經典與創新風味，無論是佐茶下午茶、辦公室療癒零嘴，或餽贈摯友的質感好禮，都是最棒的選擇！</p>
-    </div>
-
-    <!-- Filter Tabs -->
-    <div class="filter-tabs">
-      <button class="filter-btn active" onclick="filterCategory('all', this)">全部商品 (4)</button>
-      <button class="filter-btn" onclick="filterCategory('classic', this)">經典原味</button>
-      <button class="filter-btn" onclick="filterCategory('special', this)">濃郁特調</button>
-      <button class="filter-btn" onclick="filterCategory('tea', this)">茶香清爽</button>
-    </div>
-
-    <div class="products-grid">
-      <!-- Product 1 -->
-      <div class="product-card" data-category="classic">
-        <div class="product-image-container">
-          <span class="product-badge gold"><i class="fa-solid fa-crown"></i> 人氣熱銷 No.1</span>
-          <i class="fa-solid fa-plane product-shape-icon" style="color: #f59e0b;"></i>
-        </div>
-        <div class="product-info">
-          <div class="product-tags">
-            <span class="product-tag">經典原創</span>
-            <span class="product-tag">純奶香</span>
-          </div>
-          <h3 class="product-title">經典原味奶香飛機餅乾</h3>
-          <p class="product-desc">濃郁純粹的牛奶香氣，搭配微微鹹香點綴，還原童年最幸福的味道，酥脆不膩口！</p>
-          <div class="product-bottom">
-            <div class="product-price">
-              <span class="original-price">NT$ 180</span>
-              <span class="current-price"><span>NT$</span> 150</span>
-            </div>
-            <button class="btn-add-cart" onclick="addToCart('經典原味奶香飛機餅乾', 150)" title="加入購物車">
-              <i class="fa-solid fa-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="product-card" data-category="special">
-        <div class="product-image-container">
-          <span class="product-badge">濃郁大人味</span>
-          <i class="fa-solid fa-plane product-shape-icon" style="color: #78350f;"></i>
-        </div>
-        <div class="product-info">
-          <div class="product-tags">
-            <span class="product-tag">法芙娜可可</span>
-            <span class="product-tag">苦甜濃郁</span>
-          </div>
-          <h3 class="product-title">法芙娜黑可可飛機餅乾</h3>
-          <p class="product-desc">選用頂級法芙娜深黑可可粉，苦甜交織出奢華層次，巧克力愛好者絕對無法抗拒的極致享受。</p>
-          <div class="product-bottom">
-            <div class="product-price">
-              <span class="original-price">NT$ 210</span>
-              <span class="current-price"><span>NT$</span> 175</span>
-            </div>
-            <button class="btn-add-cart" onclick="addToCart('法芙娜黑可可飛機餅乾', 175)" title="加入購物車">
-              <i class="fa-solid fa-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="product-card" data-category="tea">
-        <div class="product-image-container">
-          <span class="product-badge teal">日式雅韻</span>
-          <i class="fa-solid fa-plane product-shape-icon" style="color: #15803d;"></i>
-        </div>
-        <div class="product-info">
-          <div class="product-tags">
-            <span class="product-tag">宇治抹茶</span>
-            <span class="product-tag">清爽回甘</span>
-          </div>
-          <h3 class="product-title">京都宇治抹茶飛機餅乾</h3>
-          <p class="product-desc">嚴選京都宇治一番茶磨製抹茶粉，茶香幽雅深邃，入口甘甜不苦澀，午後佐茶首選。</p>
-          <div class="product-bottom">
-            <div class="product-price">
-              <span class="original-price">NT$ 220</span>
-              <span class="current-price"><span>NT$</span> 180</span>
-            </div>
-            <button class="btn-add-cart" onclick="addToCart('京都宇治抹茶飛機餅乾', 180)" title="加入購物車">
-              <i class="fa-solid fa-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="product-card" data-category="special">
-        <div class="product-image-container">
-          <span class="product-badge gold">主廚特調</span>
-          <i class="fa-solid fa-plane product-shape-icon" style="color: #b45309;"></i>
-        </div>
-        <div class="product-info">
-          <div class="product-tags">
-            <span class="product-tag">海鹽焦糖</span>
-            <span class="product-tag">多層次</span>
-          </div>
-          <h3 class="product-title">法式海鹽焦糖飛機餅乾</h3>
-          <p class="product-desc">自製慢火熬煮焦糖，撒上法國葛宏德鹽之花，微鹹激發濃郁甜香，一口接著一口停不下來！</p>
-          <div class="product-bottom">
-            <div class="product-price">
-              <span class="original-price">NT$ 220</span>
-              <span class="current-price"><span>NT$</span> 185</span>
-            </div>
-            <button class="btn-add-cart" onclick="addToCart('法式海鹽焦糖飛機餅乾', 185)" title="加入購物車">
-              <i class="fa-solid fa-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Special Promo CTA inside products section -->
-    <div class="promo-banner">
-      <div class="promo-title"><i class="fa-solid fa-plane-departure"></i> 啟航限時優惠！滿 NT$ 699 即享全台免運</div>
-      <p class="promo-desc">
-        新會員首購結帳輸入專屬折扣代碼「<strong>PLANECOOKIE</strong>」，即享現折 NT$ 50，再贈精緻飛行提袋！
-      </p>
-      <button class="promo-btn" onclick="openCart()">
-        <i class="fa-solid fa-bolt"></i> 立即把握優惠下單
-      </button>
-    </div>
-  </section>
-
-  <!-- 5. Testimonials Section -->
+  <!-- 3.6 顧客好評見證 (Testimonials / Social Proof / 顧客好評) -->
   <section class="testimonials" id="reviews">
     <div class="section-header">
       <div class="section-subtitle">TESTIMONIALS</div>
-      <h2 class="section-title">餅乾愛好者的真實回饋</h2>
+      <h2 class="section-title">顧客好評見證</h2>
       <p class="section-desc">超過 5,000 位滿意顧客好評推薦，讓我們成為日常辦公室與家庭時光最溫暖的陪伴。</p>
     </div>
 
     <div class="testimonials-grid">
+      <!-- 顧客好評 1 -->
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -1790,6 +1833,7 @@
         </div>
       </div>
 
+      <!-- 顧客好評 2 -->
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -1806,6 +1850,7 @@
         </div>
       </div>
 
+      <!-- 顧客好評 3 -->
       <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -1824,7 +1869,7 @@
     </div>
   </section>
 
-  <!-- 6. FAQ Accordion Section -->
+  <!-- 常見問題 (FAQ) -->
   <section id="faq">
     <div class="section-header">
       <div class="section-subtitle">FREQUENTLY ASKED</div>
@@ -1869,13 +1914,13 @@
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          有的！我們提供客製專屬腰封、提袋以及大宗團購階梯優惠，歡迎透過下方聯絡表單或客服電話洽詢。
+          有的！我們提供客製專屬腰封、提袋以及大宗團購階梯優惠，歡迎透過下方聯絡表單或客服專線洽詢。
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 7. Contact / Pre-order Section -->
+  <!-- 企業大宗採購與聯絡 (Contact) -->
   <section class="contact-section" id="contact">
     <div class="section-header">
       <div class="section-subtitle">GET IN TOUCH</div>
@@ -1941,7 +1986,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- 3.7 頁尾資訊 (Footer) -->
   <footer>
     <div class="footer-container">
       <div class="footer-brand">
@@ -1958,10 +2003,10 @@
         <h4>快速導覽</h4>
         <ul class="footer-links">
           <li><a href="#home">品牌首頁</a></li>
-          <li><a href="#about">手作堅持</a></li>
-          <li><a href="#products">全部商品</a></li>
+          <li><a href="#about">有關手作</a></li>
+          <li><a href="#products">經典餅乾</a></li>
+          <li><a href="#features">品質堅持</a></li>
           <li><a href="#reviews">顧客好評</a></li>
-          <li><a href="#faq">常見問題</a></li>
         </ul>
       </div>
 
@@ -1969,7 +2014,7 @@
         <h4>客戶服務</h4>
         <ul class="footer-links">
           <li><a href="#faq">常見問題 FAQ</a></li>
-          <li><a href="#">運送與退換貨說明</a></li>
+          <li><a href="#faq">運費與退換貨說明</a></li>
           <li><a href="#contact">企業大宗採購</a></li>
           <li><a href="#">隱私權保護政策</a></li>
         </ul>
@@ -1978,7 +2023,7 @@
       <div class="footer-col">
         <h4>聯絡資訊</h4>
         <ul class="footer-links" style="line-height: 1.8;">
-          <li><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> 台灣台北市大安區手作烘焙工坊</li>
+          <li><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> 台灣台北市大安區手作烘焙工坊 88 號</li>
           <li><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> (02) 2345-6789</li>
           <li><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> service@planecookie.tw</li>
           <li><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> 週一至週五 09:30 - 18:30</li>
@@ -1986,17 +2031,18 @@
       </div>
     </div>
 
+    <!-- 版權聲明與學號備註 -->
     <div class="footer-bottom">
       <p>&copy; 2026 飛機餅乾 (Plane Cookie Handmade Bakery). All Rights Reserved. 學號：11515128</p>
     </div>
   </footer>
 
-  <!-- Shopping Cart Drawer Modal -->
+  <!-- 4.1 購物車系統 (Cart Drawer Modal) -->
   <div class="cart-drawer-overlay" id="cartOverlay"></div>
   <div class="cart-drawer" id="cartDrawer">
     <div class="cart-header">
       <h3><i class="fa-solid fa-basket-shopping"></i> 我的購物袋</h3>
-      <button class="btn-close-cart" id="closeCartBtn">&times;</button>
+      <button class="btn-close-cart" id="closeCartBtn" aria-label="關閉購物車">&times;</button>
     </div>
     <div class="cart-items" id="cartItemsContainer">
       <div class="empty-cart-msg">
@@ -2015,7 +2061,7 @@
     </div>
   </div>
 
-  <!-- Toast Notification -->
+  <!-- Toast Notification (加入購物車提示) -->
   <div class="toast" id="toast">
     <i class="fa-solid fa-circle-check" style="color: #4ade80; font-size: 1.2rem;"></i>
     <span id="toastMsg">已加入購物車！</span>
@@ -2026,9 +2072,9 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <!-- JavaScript Interaction (One-Page Scrollspy & Actions) -->
+  <!-- JavaScript Interaction -->
   <script>
-    // Shopping Cart State
+    // 購物車全域狀態 (Cart State Management)
     let cart = [];
 
     const openCartBtn = document.getElementById('openCartBtn');
@@ -2044,19 +2090,19 @@
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navMenu = document.getElementById('navMenu');
 
-    // Mobile Menu Toggle
+    // 行動版導覽選單切換 (Mobile Menu Toggle)
     mobileMenuBtn.addEventListener('click', () => {
       navMenu.classList.toggle('show');
     });
 
-    // Close Mobile menu when clicking a link
+    // 點擊導覽連結時自動收合行動選單
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('show');
       });
     });
 
-    // Cart Open/Close Event Listeners
+    // 購物車抽屜開啟與關閉 (Open/Close Cart Drawer)
     function openCart() {
       cartDrawer.classList.add('active');
       cartOverlay.classList.add('active');
@@ -2071,16 +2117,18 @@
     closeCartBtn.addEventListener('click', closeCart);
     cartOverlay.addEventListener('click', closeCart);
 
-    // Toast Notification Trigger
+    // Toast 懸浮提示通知 (2.5 秒自動隱藏)
+    let toastTimeout = null;
     function showToast(message) {
       toastMsg.textContent = message;
       toast.classList.add('show');
-      setTimeout(() => {
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
         toast.classList.remove('show');
       }, 2500);
     }
 
-    // Add To Cart Function
+    // 加入購物車 (addToCart)
     function addToCart(name, price) {
       const existingItem = cart.find(item => item.name === name);
       if (existingItem) {
@@ -2092,7 +2140,7 @@
       showToast(`已將「${name}」加入購物車！`);
     }
 
-    // Quantity Modification
+    // 購物車數量調整 (changeQty)
     function changeQty(index, delta) {
       if (cart[index]) {
         cart[index].qty += delta;
@@ -2103,7 +2151,7 @@
       updateCartUI();
     }
 
-    // Update Cart UI
+    // 購物車 UI 與金額即時更新 (updateCartUI)
     function updateCartUI() {
       const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
       cartBadge.textContent = totalItems;
@@ -2134,9 +2182,9 @@
             <div class="cart-item-price">NT$ ${item.price} × ${item.qty} = NT$ ${itemTotal}</div>
           </div>
           <div class="cart-item-controls">
-            <button class="cart-qty-btn" onclick="changeQty(${index}, -1)">-</button>
-            <span style="font-weight: 700; min-width: 20px; text-align: center;">${item.qty}</span>
-            <button class="cart-qty-btn" onclick="changeQty(${index}, 1)">+</button>
+            <button class="cart-qty-btn" onclick="changeQty(${index}, -1)" title="減少數量">-</button>
+            <span style="font-weight: 700; min-width: 24px; text-align: center;">${item.qty}</span>
+            <button class="cart-qty-btn" onclick="changeQty(${index}, 1)" title="增加數量">+</button>
           </div>
         `;
         cartItemsContainer.appendChild(itemEl);
@@ -2145,7 +2193,7 @@
       cartTotalPrice.textContent = `NT$ ${total}`;
     }
 
-    // Checkout Flow Simulation
+    // 結帳提示引導 (checkout)
     function checkout() {
       if (cart.length === 0) {
         alert('您的購物袋是空的，請先挑選商品！');
@@ -2158,7 +2206,7 @@
       closeCart();
     }
 
-    // Product Category Filter
+    // 商品類別篩選 (Category Filter)
     function filterCategory(category, btnElement) {
       document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
       btnElement.classList.add('active');
@@ -2173,13 +2221,13 @@
       });
     }
 
-    // FAQ Accordion Toggle
+    // 常見問題收合展開 (FAQ Accordion Toggle)
     function toggleFaq(element) {
       const item = element.parentElement;
       item.classList.toggle('active');
     }
 
-    // Contact Form Handler
+    // 聯絡表單送出模擬 (handleContactSubmit)
     function handleContactSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('contactName').value;
@@ -2187,13 +2235,13 @@
       e.target.reset();
     }
 
-    // One-Page Scrollspy & Back-to-Top Handler
+    // 平滑滾動與 Scrollspy 導覽高亮偵測
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
 
     window.addEventListener('scroll', () => {
       let currentSectionId = '';
-      const scrollPosition = window.pageYOffset + 120;
+      const scrollPosition = window.pageYOffset + 140;
 
       sections.forEach(section => {
         const top = section.offsetTop;
@@ -2210,7 +2258,7 @@
         }
       });
 
-      // Show/Hide Back to top button
+      // 返回頂部按鈕顯隱
       if (window.scrollY > 400) {
         backToTopBtn.classList.add('show');
       } else {
